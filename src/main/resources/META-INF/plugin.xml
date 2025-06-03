@@ -1,0 +1,24 @@
+<idea-plugin>
+    <id>com.codeme.aicodetrace</id>
+    <name>AICodeTrace</name>
+    <vendor email="984532468@qq.com" url="https://example.com">Example</vendor>
+    <description>
+        A plugin to monitor and analyze AI usage in code development within IntelliJ IDEA.
+    </description>
+    <depends>com.intellij.modules.platform</depends>
+    <depends>com.intellij.modules.java</depends>
+
+    <extensions defaultExtensionNs="com.intellij">
+        <completion.contributor language="any"
+                                implementationClass="com.codeme.aicodetrace.AICompletionTracker"/>
+    </extensions>
+
+    <actions>
+        <action id="AICodeTrace.ShowReport"
+                class="com.codeme.aicodetrace.ShowReportAction"
+                text="Show AI Usage Report"
+                description="Display AI usage statistics">
+            <add-to-group group-id="EditorPopupMenu" anchor="last"/>
+        </action>
+    </actions>
+</idea-plugin>
